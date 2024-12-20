@@ -11,9 +11,9 @@ const bookingSchema = new mongoose.Schema({
         ref:"User"
     },
 
-    startDate:Date(),
+    startDate:Date,
 
-    endDate:Date(),
+    endDate:Date,
 
     totalAmount:{
         type:Number
