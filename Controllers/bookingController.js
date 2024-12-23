@@ -78,7 +78,13 @@ const getUserBookingController = async (req,res)=>{
 //Cancel Bookings
 const cancelBookingController = async (req,res) =>{
     try{
+        const{Id} = req.params;
 
+        const booking = await  bookingsModel.findById({Id})
+        if(!booking){
+            res.status(404).json({message:"Booking not found..."})
+        }
+        
     }
     catch (error) {
         console.log(error)

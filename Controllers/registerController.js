@@ -53,6 +53,7 @@ const loginController = async (req,res)=>{
 
         //check user
         const user = await userModel.findOne({ username })
+        console.log(user)
         if (!user) {
             return res.status(404).send({ message: "User not found..." })
         }
@@ -65,7 +66,7 @@ const loginController = async (req,res)=>{
         }
 
         //token
-        const token = JWT.sign({id:username._id , role:user.role},process.env.ACCESS_TOKEN)
+        const token = JWT.sign({id:username._id , role:user.role, email:user.email},process.env.TOKEN)
 
         res.status(200).send({message:"login sucessfully....",token,user})
     }
