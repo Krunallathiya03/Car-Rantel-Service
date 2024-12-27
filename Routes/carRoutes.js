@@ -9,7 +9,7 @@ const router = express.Router();
 
 
 //Add Car
-router.post('/',verifyToken,addCarController)
+router.post('/',verifyToken,isadmin,addCarController)
 
 //get all car
 router.get('/get',verifyToken,getAllCarController)

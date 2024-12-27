@@ -9,8 +9,8 @@ const verifyToken = (req,res,next)=> {
                 return res.status(401).send({message:"Unauthorize User"})
             }
             else{
-                console.log(decode);
-                
+              //  console.log(decode);
+                req.user = decode
                 next();
             }
         })
@@ -24,8 +24,13 @@ const verifyToken = (req,res,next)=> {
 //
 
 const isadmin = (req,res,next)=>{
+
+    if(!req.user){
+        return res.status(401).json({error:"unothorized: user not authenicate"})
+    }
+
     if(req.user.role !== 'admin'){
-        return res.status(403).json({error:"Access Denied"})
+        return res.status(403).json({error:"Access Denied , Only admin can add car"})
     }
     next();
 }

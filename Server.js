@@ -17,6 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use('/auth',require("./Routes/authRoute"))
 app.use('/car',require('./Routes/carRoutes'))
 app.use('/booking',require('./Routes/bookingRoutes'))
+app.use('/analytics',require('./Routes/analyticsRoutes'))
 
 
 

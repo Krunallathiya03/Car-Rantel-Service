@@ -14,11 +14,11 @@ router.post('/create',verifyToken,createBookingController)
 router.get('/bookings',verifyToken,getUserBookingController)
 
 //cancel Booking
-router.delete('delete/:id',verifyToken,cancelBookingController)
+router.delete('/delete/:id',verifyToken,cancelBookingController)
 
 
 //Admin Route
 router.get('/',verifyToken,isadmin,getAllBookingController)
 
-
+  
 module.exports = router;

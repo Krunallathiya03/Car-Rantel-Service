@@ -24,7 +24,8 @@ const carSchema = new  mongoose.Schema({
     },
     bookings:[
         {
-            
+            type:mongoose.Schema.ObjectId,
+            ref:"Booking"
         }
     ]
     
