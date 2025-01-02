@@ -1,21 +1,21 @@
 const express = require("express");
+const { revenueByCarController, 
+        bookingStatusController, 
+        mostrentedController} = require("../Controllers/analyticsController");
+const { verifyToken, isadmin } = require('../Middlewares/authMiddleware');
 
 
  const router = express.Router();
 
 
  //most rented cars   Top 5
- router.get('./most-rented-cars') 
+ router.get('/most-rented-cars',mostrentedController) 
 
-
- //ravenue by cat (revanue per car)
- router.get('./revenue-by-car')
-
- //ravenue by month
- router.get('./revenue-by-month')
+ //ravenue by car (revanue per car)
+ router.get('/revenue-by-car',revenueByCarController)
 
  //booking status summary || status count 
- router.get('./booking-status-count')
+ router.get('/booking-status-count',bookingStatusController)
 
  
 

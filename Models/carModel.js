@@ -4,19 +4,19 @@ const mongoose = require('mongoose')
 const carSchema = new  mongoose.Schema({
     name:{
         type:String,
-        require:true
+        required:true
     },
     brand:{
         type:String,
-        require:true
+        required:true
     },
     model:{
         type:String,
-        require:true
+        required:true
     },
     pricePerDay:{
         type:Number,
-        require:true
+        required:true
     },
     availability:{
         type:Boolean,
